@@ -23,8 +23,20 @@ CxxTest::StaticSuiteDescription suiteDescription_ComplexTest( "ComplexTest.h", 1
 
 static class TestDescription_ComplexTest_testAdd : public CxxTest::RealTestDescription {
 public:
- TestDescription_ComplexTest_testAdd() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 22, "testAdd" ) {}
+ TestDescription_ComplexTest_testAdd() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 23, "testAdd" ) {}
  void runTest() { suite_ComplexTest.testAdd(); }
 } testDescription_ComplexTest_testAdd;
+
+static class TestDescription_ComplexTest_testSubtract : public CxxTest::RealTestDescription {
+public:
+ TestDescription_ComplexTest_testSubtract() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 31, "testSubtract" ) {}
+ void runTest() { suite_ComplexTest.testSubtract(); }
+} testDescription_ComplexTest_testSubtract;
+
+static class TestDescription_ComplexTest_testMultiply : public CxxTest::RealTestDescription {
+public:
+ TestDescription_ComplexTest_testMultiply() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 37, "testMultiply" ) {}
+ void runTest() { suite_ComplexTest.testMultiply(); }
+} testDescription_ComplexTest_testMultiply;
 
 #include <cxxtest/Root.cpp>
