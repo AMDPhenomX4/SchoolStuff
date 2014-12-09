@@ -15,6 +15,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Complex.cpp</itemPath>
+      <itemPath>runner.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -47,6 +48,8 @@
       </item>
       <item path="Errors.html" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -75,6 +78,8 @@
       <item path="ComplexTest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Errors.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="runner.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

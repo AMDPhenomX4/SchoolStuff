@@ -43,6 +43,6 @@ public:
     friend istream &operator>>(istream &stream, Complex &complex);
 
 private:
-    double a = 0;
-    double b = 0;
+    double a;
+    double b;
 };
