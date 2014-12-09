@@ -1,0 +1,161 @@
+"/C/MinGW/msys/1.0/bin/make.exe" -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .build-conf
+make.exe[1]: Entering directory `/c/Users/Admin/Documents/NetBeansProjects/Complex numbers'
+"/C/MinGW/msys/1.0/bin/make.exe"  -f nbproject/Makefile-Debug.mk dist/Debug/MinGW-Windows/complex_numbers.exe
+make.exe[2]: Entering directory `/c/Users/Admin/Documents/NetBeansProjects/Complex numbers'
+mkdir -p build/Debug/MinGW-Windows
+rm -f "build/Debug/MinGW-Windows/Complex.o.d"
+g++    -c -g -MMD -MP -MF "build/Debug/MinGW-Windows/Complex.o.d" -o build/Debug/MinGW-Windows/Complex.o Complex.cpp
+In file included from Complex.cpp:1:0:
+Complex.h:35:23: error: ISO C++ forbids declaration of 'operator++' with no type [-fpermissive]
+   operator++(int dummy); // Postfix ++
+                       ^
+Complex.cpp:26:9: error: prototype for 'Complex Complex::add(Complex&) const' does not match any in class 'Complex'
+ Complex Complex::add(Complex &secondComplex)  const{
+         ^
+In file included from Complex.cpp:1:0:
+Complex.h:15:11: error: candidate is: Complex Complex::add(const Complex&) const
+   Complex add(const Complex &secondComplex) const;
+           ^
+Complex.cpp:30:9: error: prototype for 'Complex Complex::subtract(Complex&) const' does not match any in class 'Complex'
+ Complex Complex::subtract(Complex &secondComplex)  const{
+         ^
+In file included from Complex.cpp:1:0:
+Complex.h:16:11: error: candidate is: Complex Complex::subtract(const Complex&) const
+   Complex subtract(const Complex &secondComplex) const;
+           ^
+Complex.cpp:34:9: error: prototype for 'Complex Complex::multiply(Complex&) const' does not match any in class 'Complex'
+ Complex Complex::multiply(Complex &secondComplex) const {
+         ^
+In file included from Complex.cpp:1:0:
+Complex.h:17:11: error: candidate is: Complex Complex::multiply(const Complex&) const
+   Complex multiply(const Complex &secondComplex) const;
+           ^
+Complex.cpp:38:9: error: prototype for 'Complex Complex::divide(Complex&) const' does not match any in class 'Complex'
+ Complex Complex::divide(Complex &secondComplex)  const{
+         ^
+In file included from Complex.cpp:1:0:
+Complex.h:18:11: error: candidate is: Complex Complex::divide(const Complex&) const
+   Complex divide(const Complex &secondComplex) const;
+           ^
+Complex.cpp: In member function 'bool Complex::equals(const Complex&) const':
+Complex.cpp:45:16: error: expected primary-expression before '.' token
+     if (Complex.subtract(secondComplex) == 0)
+                ^
+Complex.cpp: At global scope:
+Complex.cpp:55:46: error: ISO C++ forbids declaration of 'operator+=' with no type [-fpermissive]
+ Complex::operator+=(Complex& secondComplex)  const{
+                                              ^
+Complex.cpp:55:1: error: prototype for 'int Complex::operator+=(Complex&) const' does not match any in class 'Complex'
+ Complex::operator+=(Complex& secondComplex)  const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:25:12: error: candidate is: Complex& Complex::operator+=(Complex&)
+   Complex &operator+=(Complex &secondComplex);
+            ^
+Complex.cpp:63:45: error: ISO C++ forbids declaration of 'operator-=' with no type [-fpermissive]
+ Complex::operator-=(Complex& secondComplex) const {
+                                             ^
+Complex.cpp:63:1: error: prototype for 'int Complex::operator-=(Complex&) const' does not match any in class 'Complex'
+ Complex::operator-=(Complex& secondComplex) const {
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:26:12: error: candidate is: Complex& Complex::operator-=(Complex&)
+   Complex &operator-= (Complex &secondComplex);
+            ^
+Complex.cpp:67:45: error: ISO C++ forbids declaration of 'operator/=' with no type [-fpermissive]
+ Complex::operator/=(Complex& secondComplex) const {
+                                             ^
+Complex.cpp:67:1: error: prototype for 'int Complex::operator/=(Complex&) const' does not match any in class 'Complex'
+ Complex::operator/=(Complex& secondComplex) const {
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:28:12: error: candidate is: Complex& Complex::operator/=(Complex&)
+   Complex &operator/=(Complex &secondComplex);
+            ^
+Complex.cpp:71:46: error: ISO C++ forbids declaration of 'operator*=' with no type [-fpermissive]
+ Complex::operator*=(Complex& secondComplex)  const{
+                                              ^
+Complex.cpp:71:1: error: prototype for 'int Complex::operator*=(Complex&) const' does not match any in class 'Complex'
+ Complex::operator*=(Complex& secondComplex)  const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:27:12: error: candidate is: Complex& Complex::operator*=(Complex&)
+   Complex &operator*=(Complex &secondComplex);
+            ^
+Complex.cpp:75:24: error: ISO C++ forbids declaration of 'operator++' with no type [-fpermissive]
+ Complex::operator++()  const{
+                        ^
+Complex.cpp:75:1: error: prototype for 'int Complex::operator++() const' does not match any in class 'Complex'
+ Complex::operator++()  const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:35:3: error: candidates are: int Complex::operator++(int)
+   operator++(int dummy); // Postfix ++
+   ^
+Complex.h:32:12: error:                 Complex& Complex::operator++()
+   Complex &operator++(); // Prefix ++
+            ^
+Complex.cpp:80:24: error: ISO C++ forbids declaration of 'operator--' with no type [-fpermissive]
+ Complex::operator--()  const{
+                        ^
+Complex.cpp:80:1: error: prototype for 'int Complex::operator--() const' does not match any in class 'Complex'
+ Complex::operator--()  const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:36:11: error: candidates are: Complex Complex::operator--(int)
+   Complex operator--(int dummy); // Postfix --
+           ^
+Complex.h:33:12: error:                 Complex& Complex::operator--()
+   Complex &operator--(); // Prefix ++
+            ^
+Complex.cpp:85:32: error: ISO C++ forbids declaration of 'operator++' with no type [-fpermissive]
+ Complex::operator++(int dummy) const {
+                                ^
+Complex.cpp:85:1: error: prototype for 'int Complex::operator++(int) const' does not match any in class 'Complex'
+ Complex::operator++(int dummy) const {
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:35:3: error: candidates are: int Complex::operator++(int)
+   operator++(int dummy); // Postfix ++
+   ^
+Complex.h:32:12: error:                 Complex& Complex::operator++()
+   Complex &operator++(); // Prefix ++
+            ^
+Complex.cpp:92:33: error: ISO C++ forbids declaration of 'operator--' with no type [-fpermissive]
+ Complex::operator--(int dummy)  const{
+                                 ^
+Complex.cpp:92:1: error: prototype for 'int Complex::operator--(int) const' does not match any in class 'Complex'
+ Complex::operator--(int dummy)  const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:36:11: error: candidates are: Complex Complex::operator--(int)
+   Complex operator--(int dummy); // Postfix --
+           ^
+Complex.h:33:12: error:                 Complex& Complex::operator--()
+   Complex &operator--(); // Prefix ++
+            ^
+Complex.cpp:98:23: error: ISO C++ forbids declaration of 'operator+' with no type [-fpermissive]
+ Complex::operator +() const{
+                       ^
+Complex.cpp:98:1: error: prototype for 'int Complex::operator+() const' does not match any in class 'Complex'
+ Complex::operator +() const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:38:11: error: candidate is: Complex Complex::operator+()
+   Complex operator+(); // Unary +  
+           ^
+Complex.cpp:101:23: error: ISO C++ forbids declaration of 'operator-' with no type [-fpermissive]
+ Complex::operator -() const{
+                       ^
+Complex.cpp:101:1: error: prototype for 'int Complex::operator-() const' does not match any in class 'Complex'
+ Complex::operator -() const{
+ ^
+In file included from Complex.cpp:1:0:
+Complex.h:39:11: error: candidate is: Complex Complex::operator-()
+   Complex operator-(); // Unary - 
+           ^
+make.exe[2]: *** [build/Debug/MinGW-Windows/Complex.o] Error 1
+make.exe[2]: Leaving directory `/c/Users/Admin/Documents/NetBeansProjects/Complex numbers'
+make.exe[1]: *** [.build-conf] Error 2
+make.exe[1]: Leaving directory `/c/Users/Admin/Documents/NetBeansProjects/Complex numbers'
+make.exe": *** [.build-impl] Error 2

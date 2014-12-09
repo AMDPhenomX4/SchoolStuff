@@ -22,9 +22,8 @@ class ComplexTest : public CxxTest::TestSuite
      void testAdd()
     {
      // A clock set to 0, should have a 0 value for hours, minutes, and seconds.
-        
-         Complex b = new Complex(1,1);
-        c.add(b);
+//         Complex b;
+//        c.add(b);
        TS_ASSERT_EQUALS(1,1); 
     }
     

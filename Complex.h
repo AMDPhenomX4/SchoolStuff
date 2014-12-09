@@ -19,24 +19,26 @@ public:
   bool equals(const Complex &secondComplex) const;
   double abs() const;
   string toString() const;
-
-  bool operator==(const Complex &secondComplex);
-  bool operator!=(const Complex &secondComplex); 
-  Complex &operator+=(Complex &secondComplex);
-  Complex &operator-= (Complex &secondComplex);
-  Complex &operator*=(Complex &secondComplex);
-  Complex &operator/=(Complex &secondComplex);
+//you see I want to do the functiony stuff for  vvvvvv that shit
+  
 
   double &operator[](const int & index);
 
-  Complex &operator++(); // Prefix ++
-  Complex &operator--(); // Prefix ++
-
-  Complex operator++(int dummy); // Postfix ++
-  Complex operator--(int dummy); // Postfix --
-
-  Complex operator+(); // Unary +  
-  Complex operator-(); // Unary - 
+  
+//  bool operator==(const Complex &secondComplex);
+//  bool operator!=(const Complex &secondComplex); 
+//  Complex &operator+=(Complex &secondComplex);
+//  Complex &operator-= (Complex &secondComplex);
+//  Complex &operator*=(Complex &secondComplex);
+//  Complex &operator/=(Complex &secondComplex);
+//  Complex &operator++(); // Prefix ++
+//  Complex &operator--(); // Prefix ++
+//
+//  Complex operator++(int dummy); // Postfix ++
+//  Complex operator--(int dummy); // Postfix --
+//
+//  Complex operator+(); // Unary +  
+//  Complex operator-(); // Unary - 
 
   friend ostream &operator<<(ostream &stream, const Complex &complex);
   friend istream &operator>>(istream &stream, Complex &complex);

@@ -23,81 +23,94 @@ double Complex::getB() const{
 }
 
 
-Complex Complex::add(Complex &secondComplex)  const{
-    return (Complex::Complex(Complex::a + secondComplex.getA()), (Complex::b + secondComplex.getB()));
+Complex Complex::add(const Complex &secondComplex)  const{
+    return (Complex(Complex::a + secondComplex.getA()), (Complex::b + secondComplex.getB()));
 }
 
-Complex Complex::subtract(Complex &secondComplex)  const{
-    return (Complex::Complex(Complex::a - secondComplex.getA()), (Complex::b - secondComplex.getB()));
+Complex Complex::subtract(const Complex &secondComplex)  const{
+    return (Complex(Complex::a - secondComplex.getA()), (Complex::b - secondComplex.getB()));
 }
 
-Complex Complex::multiply(Complex &secondComplex) const {
-    return (Complex::Complex(((Complex::a * secondComplex.getA())-(Complex::b * secondComplex.getB())), (((Complex::b * secondComplex.getA())+(Complex::a * secondComplex.getB())))));
+Complex Complex::multiply(const Complex &secondComplex) const {
+    return (Complex(((Complex::a * secondComplex.getA())-(Complex::b * secondComplex.getB())), (((Complex::b * secondComplex.getA())+(Complex::a * secondComplex.getB())))));
 }
 
-Complex Complex::divide(Complex &secondComplex)  const{
+Complex Complex::divide(const Complex &secondComplex)  const{
     double divisor;
     divisor = (secondComplex.getA() * secondComplex.getA() + secondComplex.getB() * secondComplex.getB());
-    return (Complex::Complex(((Complex::a * secondComplex.getA())+(Complex::b * secondComplex.getB())) / divisor, ((Complex::b * secondComplex.getA())-(Complex::a * secondComplex.getB())) / divisor));
+    return (Complex(((Complex::a * secondComplex.getA())+(Complex::b * secondComplex.getB())) / divisor, ((Complex::b * secondComplex.getA())-(Complex::a * secondComplex.getB())) / divisor));
 }
 
-bool Complex::equals(const Complex& secondComplex) const {
-    if (Complex.subtract(secondComplex) == 0)
-        return 1;
-    else
-        return 0;
-}
+//bool Complex::equals(const Complex& secondComplex) const {
+//    if (this->subtract(secondComplex) == 0)
+//        return 1;
+//    else
+//        return 0;
+//}
 
 double Complex::abs()  const{
     return (sqrt(Complex::a * Complex::a + Complex::b * Complex::b));
 }
 
-Complex::operator+=(Complex& secondComplex)  const{
-    return (Complex.add(secondComplex));
-}
-
-/*
-Complex::operator +=(Complex& secondComplex){
-    return(Complex(Complex::add(secondComplex)));
-}*/
-Complex::operator-=(Complex& secondComplex) const {
-    return (Complex.subtract(secondComplex));
-}
-
-Complex::operator/=(Complex& secondComplex) const {
-    return (Complex.divide(secondComplex));
-}
-
-Complex::operator*=(Complex& secondComplex)  const{
-    return (Complex.multiply(secondComplex));
-}
-
-Complex::operator++()  const{
-    Complex test = new Complex(1);
-    return (Complex.add(test));
-}
-
-Complex::operator--()  const{
-    Complex test = new Complex(1);
-    return (Complex.subtract(test));
-}
-
-Complex::operator++(int dummy) const {
-    Complex copy = this;
-    Complex test = new Complex(1);
-    this = Complex.add(test);
-    return (copy);
-}
-
-Complex::operator--(int dummy)  const{
-    Complex copy = this;
-    Complex test = new Complex(1);
-    this = Complex.subtract(test);
-    return (copy);
-}
-Complex::operator +() const{
-    
-}
-Complex::operator -() const{
-    
-}
+//bool Complex::operator==(Complex &secondComplex)  const{
+//    return (this->add(secondComplex));
+//}
+//
+//bool Complex::operator!=(Complex &secondComplex)  const{
+//    return (this->add(secondComplex));
+//}
+//
+////Complex Complex::operator+=(Complex& secondComplex)  const{
+////    return (this->add(secondComplex));
+////}
+//Complex operator+(Complex lhs, Complex& rhs){
+//    
+//}
+//
+//
+//Complex::operator +=(Complex& secondComplex){
+//    return(Complex(Complex::add(secondComplex)));
+//}
+//    
+//    
+//Complex::operator-=(Complex& secondComplex) const {
+//    return (this->subtract(secondComplex));
+//}
+//
+//Complex::operator/=(Complex& secondComplex) const {
+//    return (this->divide(secondComplex));
+//}
+//
+//Complex::operator*=(Complex secondComplex)  const{
+//    return (this->multiply(secondComplex));
+//}
+//
+//Complex::operator++()  const{
+//    Complex test = new Complex(1);
+//    return (this->add(test));
+//}
+//
+//Complex::operator--()  const{
+//    Complex test = new Complex(1);
+//    return (this->subtract(test));
+//}
+//
+//Complex::operator++(int dummy) const {
+//    Complex copy = this;
+//    Complex test = new Complex(1);
+//    this = this->add(test);
+//    return (copy);
+//}
+//
+//Complex::operator--(int dummy)  const{
+//    Complex copy = this;
+//    Complex test = new Complex(1);
+//    this = this->subtract(test);
+//    return (copy);
+//}
+//Complex::operator +() const{
+//    
+//}
+//Complex::operator -() const{
+//    
+//}
