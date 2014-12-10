@@ -6,11 +6,11 @@ Complex::Complex() {
 }
 
 Complex::Complex(double a) :a(a){};
-Complex::Complex(double a, double b) : a(a), b(b) {};
-//Complex::Complex(double a, double b) {
-//    this->a=a;
-//    this->b=b;
-//}
+//Complex::Complex(double a, double b) : a(a), b(b) {};
+Complex::Complex(double a, double b) {
+    this->a=a;
+    this->b=b;
+}
 
 double Complex::getA() const {
     return this->a;
@@ -56,7 +56,7 @@ Complex Complex::subtract(const Complex &secondComplex) const {
 }
 
 Complex Complex::multiply(const Complex &secondComplex) const {
-    return(Complex(((this->a * secondComplex.getA())-(this->b * secondComplex.getB())), (((this->b * secondComplex.getA())+(this->a * secondComplex.getB())))));
+    return(Complex(((this->a * secondComplex.getA())-(this->b * secondComplex.getB())), ((this->a * secondComplex.getB())+(this->b * secondComplex.getA()))));
 }
 
 Complex Complex::divide(const Complex &secondComplex) const {
@@ -76,6 +76,7 @@ double Complex::abs() const {
     return (sqrt(this->a* this->a+ this->b * this->b));
 }
 
+
 bool Complex::operator==(const Complex &secondComplex) {
     if (this->a== secondComplex.a && this->b == secondComplex.b)
         return true;
@@ -92,34 +93,50 @@ bool Complex::operator!=(const Complex &secondComplex) {
 
 Complex& Complex::operator+=(Complex &secondComplex) {
 //    Complex returnVal = this->add(secondComplex);
-    this->add(secondComplex);
+//    this->add(secondComplex);
+//    return (*this);
+    this->a = add(secondComplex).getA();
+    this->b = add(secondComplex).getB();
     return (*this);
 }
 
 Complex& Complex::operator-=(Complex &secondComplex) {
-    this->subtract(secondComplex);
+    this->a = this->a-secondComplex.getA();
+    this->b = this->b-secondComplex.getB();
     return (*this);
 }
 
 Complex& Complex::operator/=(Complex &secondComplex) {
-    this->divide(secondComplex);
+    this->a = divide(secondComplex).getA();
+    this->b = divide(secondComplex).getB();
     return (*this);
 }
 
 Complex& Complex::operator*=(Complex &secondComplex) {
-    this->multiply(secondComplex);
+//    this->a = multiply(secondComplex).getA();
+//    this->b = multiply(secondComplex).getB();
+    double bStorage = secondComplex.getA();
+    this->a = ((this->a * secondComplex.getA())-(this->b * secondComplex.getB()));
+    cout << this->a  <<endl;
+    cout << bStorage<<endl;
+    cout<< "B^Av"<<endl;
+    cout << secondComplex.getA()<<endl;
+    this->b = ((this->a * secondComplex.getB())+(this->b * secondComplex.getA()));
     return (*this);
 }
-
+//void setA(int value){
+//    this->a;
+//}
 Complex& Complex::operator++() {
-    this->add(Complex(4,0));
+    this->a = a+1;
     return (*this);
 }
 
 Complex& Complex::operator--() {
-
-    Complex returnVal = this->subtract(Complex(1,0));
-    return (returnVal);
+    Complex secondComplex = Complex(1,0);
+    this->a = subtract(secondComplex).getA();
+    this->b = subtract(secondComplex).getB();
+    return (*this);
 }
 
 Complex Complex::operator++(int dummy) {
@@ -136,9 +153,11 @@ Complex Complex::operator--(int dummy) {
     return(copy);
 }
 Complex Complex::operator+(){
-    return(Complex(this->a,this->b));
+    return(*this);
+    //return(Complex(this->a,this->b));
 }
 Complex Complex::operator-(){
+    
     return(Complex(this->a*-1,this->b*-1));
 }
 ostream &operator<<(ostream &out, Complex c)     //output

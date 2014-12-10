@@ -7,6 +7,7 @@
 
 #ifndef COMPLEXTEST_H
 #define	COMPLEXTEST_H
+//#define system.out.println(x) std::cout<<x;
 
 #include <cxxtest/TestSuite.h>
 #include <string>
@@ -19,6 +20,7 @@ class ComplexTest : public CxxTest::TestSuite
  public:
      
      Complex c;
+     Complex d;
      void testGetA(){
          Complex* test = new Complex(1,1);
 cout<<test->getA()<< "THIS IS ALSO A" << endl;
@@ -57,13 +59,43 @@ cout<<test->getA()<< "THIS IS ALSO A" << endl;
        TS_ASSERT_EQUALS(Complex(2,2).divide(Complex(2,2)).getA(),1); 
        TS_ASSERT_EQUALS(Complex(2,2).divide(Complex(2,2)).getB(),0); 
     }
-          void testPlusEqual(){
-              TS_ASSERT_EQUALS((Complex(2,2)++).getA(),2); 
+          void testPlusPlus(){
+              c = Complex(2,2);
+              c++;
+              TS_ASSERT_EQUALS(c.getA(),3); 
+          }
+          void testMinusMinus(){
+              c = Complex(2,2);
+              c--;
+              TS_ASSERT_EQUALS(c.getA(),1); 
           }
           void testAddEqual(){
-              TS_ASSERT_EQUALS((Complex(1,1)+=&Complex(2,2)).getA(),3)
+              d = Complex(2,2);
+              c = Complex(1,1);
+              c+=d;
+              TS_ASSERT_EQUALS(c.getA(),3)
           }
-    
+          void testMinusEqual(){
+              d = Complex(2,2);
+              c = Complex(1,1);
+              c-=d;
+              TS_ASSERT_EQUALS(c.getA(),-1)
+          }
+          void testTimesEqual(){
+              d = Complex(4,2);
+              c = Complex(1,5);
+              c*=d;
+              TS_ASSERT_EQUALS(c.getA(),-6)
+              TS_ASSERT_EQUALS(c.getB(),4)
+          }
+          void testDividedEqual(){
+              d = Complex(2,2);
+              c = Complex(1,1);
+              c/=d;
+              TS_ASSERT_EQUALS(c.getA(),.5)
+          }
+          
+          
 };
 
 #endif	/* COMPLEXTEST_H */
