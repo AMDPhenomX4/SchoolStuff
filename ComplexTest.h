@@ -37,17 +37,32 @@ cout<<test->getA()<< "THIS IS ALSO A" << endl;
     {
  
        c.subtract(Complex(1,1));
+       c.subtract(Complex(1,1)).toString();
+       cout<<c.subtract(Complex(1,1)).toString() << "COUT" <<endl;
        TS_ASSERT_EQUALS(c.subtract(Complex(1,1)).getA(),-1); 
     }
      void testMultiply()
     {
      // A clock set to 0, should have a 0 value for hours, minutes, and seconds.
 //         Complex b;
-        c.multiply(Complex(2,2));
-       TS_ASSERT_EQUALS(c.multiply(Complex(2,2)).getA(),0); 
-       TS_ASSERT_EQUALS(c.multiply(Complex(2,2)).getB(),0); 
+         //cout<<c.getA();
+       TS_ASSERT_EQUALS(Complex(2,2).multiply(Complex(2,2)).getA(),0); 
+       TS_ASSERT_EQUALS(Complex(2,2).multiply(Complex(2,2)).getB(),8); 
     }
-    
+          void testDivide()
+    {
+     // A clock set to 0, should have a 0 value for hours, minutes, and seconds.
+//         Complex b;
+         //cout<<c.getA();
+       TS_ASSERT_EQUALS(Complex(2,2).divide(Complex(2,2)).getA(),1); 
+       TS_ASSERT_EQUALS(Complex(2,2).divide(Complex(2,2)).getB(),0); 
+    }
+          void testPlusEqual(){
+              TS_ASSERT_EQUALS((Complex(2,2)++).getA(),2); 
+          }
+          void testAddEqual(){
+              TS_ASSERT_EQUALS((Complex(1,1)+=&Complex(2,2)).getA(),3)
+          }
     
 };
 

@@ -35,14 +35,26 @@ public:
 
 static class TestDescription_ComplexTest_testSubtract : public CxxTest::RealTestDescription {
 public:
- TestDescription_ComplexTest_testSubtract() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 35, "testSubtract" ) {}
+ TestDescription_ComplexTest_testSubtract() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 36, "testSubtract" ) {}
  void runTest() { suite_ComplexTest.testSubtract(); }
 } testDescription_ComplexTest_testSubtract;
 
 static class TestDescription_ComplexTest_testMultiply : public CxxTest::RealTestDescription {
 public:
- TestDescription_ComplexTest_testMultiply() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 41, "testMultiply" ) {}
+ TestDescription_ComplexTest_testMultiply() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 44, "testMultiply" ) {}
  void runTest() { suite_ComplexTest.testMultiply(); }
 } testDescription_ComplexTest_testMultiply;
+
+static class TestDescription_ComplexTest_testDivide : public CxxTest::RealTestDescription {
+public:
+ TestDescription_ComplexTest_testDivide() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 52, "testDivide" ) {}
+ void runTest() { suite_ComplexTest.testDivide(); }
+} testDescription_ComplexTest_testDivide;
+
+static class TestDescription_ComplexTest_testPlusEqual : public CxxTest::RealTestDescription {
+public:
+ TestDescription_ComplexTest_testPlusEqual() : CxxTest::RealTestDescription( Tests_ComplexTest, suiteDescription_ComplexTest, 60, "testPlusEqual" ) {}
+ void runTest() { suite_ComplexTest.testPlusEqual(); }
+} testDescription_ComplexTest_testPlusEqual;
 
 #include <cxxtest/Root.cpp>

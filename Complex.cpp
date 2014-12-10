@@ -5,9 +5,7 @@
 Complex::Complex() {
 }
 
-Complex::Complex(double a) {
-    this->Complex::a = a;
-}
+Complex::Complex(double a) :a(a){};
 Complex::Complex(double a, double b) : a(a), b(b) {};
 //Complex::Complex(double a, double b) {
 //    this->a=a;
@@ -21,7 +19,11 @@ double Complex::getB() const {
     return this->b;
 }
 double& Complex::operator[](const int & index){
-    
+
+    if(index == 0){
+        return(this->a);
+    }else
+        return(this->b);
 }
 
 
@@ -37,7 +39,9 @@ std::string str = strs.str();
     std::string b = str;
     std::string output = a;
     std::ostringstream oss;
-oss << a << "+" <<b<<"i"<<endl;
+//    cout<< "AAAA "<<a;
+//    cout<< "AAAAb "<<b;
+oss << a << "+" <<b<<"i";
 std::string var = oss.str();
     return(var);
 }
@@ -47,7 +51,7 @@ Complex Complex::add(const Complex &secondComplex) const {
 }
 
 Complex Complex::subtract(const Complex &secondComplex) const {
-    cout<<"fuck me";
+    //cout<<"fuck me";
     return(Complex((this->a - secondComplex.getA()), (this->b - secondComplex.getB())));
 }
 
@@ -87,55 +91,67 @@ bool Complex::operator!=(const Complex &secondComplex) {
 }
 
 Complex& Complex::operator+=(Complex &secondComplex) {
-    Complex returnVal = this->add(secondComplex);
-    return (returnVal);
+//    Complex returnVal = this->add(secondComplex);
+    this->add(secondComplex);
+    return (*this);
 }
 
 Complex& Complex::operator-=(Complex &secondComplex) {
-    Complex returnVal = this->subtract(secondComplex);
-    return (returnVal);
+    this->subtract(secondComplex);
+    return (*this);
 }
 
 Complex& Complex::operator/=(Complex &secondComplex) {
-    Complex returnVal = this->divide(secondComplex);
-    return (returnVal);
+    this->divide(secondComplex);
+    return (*this);
 }
 
 Complex& Complex::operator*=(Complex &secondComplex) {
-    Complex returnVal = this->multiply(secondComplex);
-    return (returnVal);
+    this->multiply(secondComplex);
+    return (*this);
 }
 
 Complex& Complex::operator++() {
-
-    Complex returnVal = this->add(Complex(1));
-    return (returnVal);
+    this->add(Complex(4,0));
+    return (*this);
 }
 
 Complex& Complex::operator--() {
 
-    Complex returnVal = this->subtract(Complex(1));
+    Complex returnVal = this->subtract(Complex(1,0));
     return (returnVal);
 }
 
 Complex Complex::operator++(int dummy) {
     //Complex copy = new Complex(this->a,this->b);
-    int complexa = this->a;
-    int complexb = this->b;
-    this->add(Complex(1));
-    return(Complex(complexa,complexb));
+    Complex copy(*this);
+    ++(*this);
+    return(copy);
 }
 
 Complex Complex::operator--(int dummy) {
     //Complex copy = new Complex(this->a,this->b);
-    int complexa = this->a;
-    int complexb = this->b;
-    this->subtract(Complex(1));
-    return(Complex(complexa,complexb));
+    Complex copy(*this);
+    --(*this);
+    return(copy);
 }
 Complex Complex::operator+(){
     return(Complex(this->a,this->b));
 }
 Complex Complex::operator-(){
     return(Complex(this->a*-1,this->b*-1));
+}
+ostream &operator<<(ostream &out, Complex c)     //output
+{
+        out<<"real part: "<<c.getA()<<"\n";
+        out<<"imag part: "<<c.getB()<<"\n";
+        return out;
+}
+istream &operator>>(istream &in, Complex &c)     //input
+{
+        cout<<"enter real part:\n";
+        in>>c.a;
+        cout<<"enter imag part: \n";
+        in>>c.b;
+        return in;
 }
